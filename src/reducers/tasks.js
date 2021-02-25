@@ -9,7 +9,7 @@ import { ADD_TASK, DEL_TASK } from "../actions/tasks";
  * @param {*} state;
  * @param {*} action; 
  */
-let taskId = 0
+let taskId = 0;
 
 function tasks (state = [], action) {
     switch (action.type) {
@@ -33,5 +33,9 @@ function tasks (state = [], action) {
             }
             return task;
         })
+        default:
+             return state;
     }
 }
+
+export default tasks;

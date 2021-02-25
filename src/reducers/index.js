@@ -18,3 +18,5 @@ const tasksApp = combineReducers ({
     visibilityFilter,
     tasks,
 })
+
+export default tasksApp
