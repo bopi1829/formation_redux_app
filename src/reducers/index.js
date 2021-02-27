@@ -19,4 +19,4 @@ const tasksApp = combineReducers ({
     tasks,
 })
 
-export default tasksApp
+export default tasksApp;

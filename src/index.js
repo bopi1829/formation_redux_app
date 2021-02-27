@@ -6,13 +6,17 @@ import reportWebVitals from './reportWebVitals';
 
 import { createStore } from 'redux';
 import tasksApp from './reducers';
-import { addTask, delTask, setVisibilityFilter, VisibilityFilters,  } from './actions/tasks';
+
+import { Provider } from 'react-redux';
+
+//import { addTask, delTask, setVisibilityFilter, VisibilityFilters,  } from './actions/tasks';
 
 const store = createStore (tasksApp)
+
 console.log ("Initial state Redux :", store.getState())
 
-const unsubscribe =  store.subscribe (() => console.log("State store :", store.getState()))
-
+store.subscribe (() => console.log("State store :", store.getState()))
+/*
 store.dispatch (addTask('Ma premiere tache'));
 store.dispatch (addTask('Ma deuxieme tache'));
 store.dispatch (addTask('Aller faire des courses'));
@@ -25,11 +29,14 @@ store.dispatch (setVisibilityFilter(VisibilityFilters.SHOW_ALL));
 store.dispatch (setVisibilityFilter(VisibilityFilters.SHOW_DELETED));
 
 unsubscribe ();
+*/
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
