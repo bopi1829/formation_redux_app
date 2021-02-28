@@ -29,7 +29,7 @@ function tasks (state = [], action) {
         // deleted: true
         return state.map ((task, index) => {
             if (index === action.index) {
-                task.deleted = true;
+                task.deleted = !task.deleted;
             }
             return task;
         })

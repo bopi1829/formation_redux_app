@@ -3,7 +3,7 @@ import { SET_VISIBILITY_FILTER, VisibilityFilters } from '../actions/tasks';
 
 import tasks from './tasks';
 
-const { SHOW_ALL } = VisibilityFilters;
+const { SHOW_ALL, SHOW_DELETED, SHOW_ACTIVE } = VisibilityFilters;
 
 function visibilityFilter (state = SHOW_ALL, action) {
     switch (action.type) {

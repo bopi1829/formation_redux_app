@@ -16,13 +16,13 @@ let AddTask = ({dispatch}) => {
                     dispatch(addTask(input.value))
                     input.value = '';
                 }}
-            >
-            <input
-                ref={node => {
-                    input = node
-                }}
-            />
-            <button type="submit">Add Task</button>
+                >
+                <input
+                    ref={node => {
+                        input = node
+                    }}
+                />
+                <button type="submit">Add Task</button>
             </form>
         </div>
     )
